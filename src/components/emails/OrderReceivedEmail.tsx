@@ -75,9 +75,7 @@ const OrderReceivedEmail = ({
               </Column>
             </Row>
           </Section>
-
           <Hr style={global.hr} />
-
           <Section style={paddingY}>
             <Row>
               <Text
