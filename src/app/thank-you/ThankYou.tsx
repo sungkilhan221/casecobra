@@ -90,49 +90,57 @@ const ThankYou = () => {
 
         <div>
           <div className="grid grid-cols-2 gap-x-6 py-10 text-sm">
-            <div>
-              <p className="font-medium text-gray-900">Shipping address</p>
-              <div className="mt-2 text-zinc-700">
-                <address className="not-italic">
-                  <span className="block capitalize">
-                    {shippingAddress?.name}
-                  </span>
-                  <span className="block">{shippingAddress?.street}</span>
-                  <span className="block">
-                    <span className="capitalize">
-                      {shippingAddress?.city
-                        ? `${shippingAddress?.city}, `
-                        : null}
+            {shippingAddress && (
+              <div>
+                <p className="font-medium text-gray-900">Shipping address</p>
+                <div className="mt-2 text-zinc-700">
+                  <address className="not-italic">
+                    <span className="block capitalize">
+                      {shippingAddress?.name}
                     </span>
-                    <span className="uppercase">{shippingAddress?.state} </span>
-                    {shippingAddress?.postalCode}
-                  </span>
-                  <span className="block"></span>
-                </address>
+                    <span className="block">{shippingAddress?.street}</span>
+                    <span className="block">
+                      <span className="capitalize">
+                        {shippingAddress?.city
+                          ? `${shippingAddress?.city}, `
+                          : null}
+                      </span>
+                      <span className="uppercase">
+                        {shippingAddress?.state}{" "}
+                      </span>
+                      {shippingAddress?.postalCode}
+                    </span>
+                    <span className="block"></span>
+                  </address>
+                </div>
               </div>
-            </div>
+            )}
 
-            <div>
-              <p className="font-medium text-gray-900">Billing address</p>
-              <div className="mt-2 text-zinc-700">
-                <address className="not-italic">
-                  <span className="block capitalize">
-                    {billingAddress?.name}
-                  </span>
-                  <span className="block">{billingAddress?.street}</span>
-                  <span className="block">
-                    <span className="capitalize">
-                      {billingAddress?.city
-                        ? `${billingAddress?.city}, `
-                        : null}
+            {billingAddress && (
+              <div>
+                <p className="font-medium text-gray-900">Billing address</p>
+                <div className="mt-2 text-zinc-700">
+                  <address className="not-italic">
+                    <span className="block capitalize">
+                      {billingAddress?.name}
                     </span>
-                    <span className="uppercase">{billingAddress?.state} </span>
-                    {billingAddress?.postalCode}
-                  </span>
-                  <span className="block"></span>
-                </address>
+                    <span className="block">{billingAddress?.street}</span>
+                    <span className="block">
+                      <span className="capitalize">
+                        {billingAddress?.city
+                          ? `${billingAddress?.city}, `
+                          : null}
+                      </span>
+                      <span className="uppercase">
+                        {billingAddress?.state}{" "}
+                      </span>
+                      {billingAddress?.postalCode}
+                    </span>
+                    <span className="block"></span>
+                  </address>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           <div className="grid grid-cols-2 gap-x-6 border-t border-zinc-200 py-10 text-sm">

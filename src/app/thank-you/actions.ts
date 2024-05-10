@@ -2,13 +2,15 @@
 
 import { db } from "@/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { redirect } from "next/navigation";
 
 export const getPaymentStatus = async ({ orderId }: { orderId: string }) => {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
   if (!user?.id || !user.email) {
-    throw new Error("You need to be logged in to view this page.");
+    redirect("/api/auth/login");
+    // throw new Error("You need to be logged in to view this page.");
   }
 
   const order = await db.order.findFirst({
@@ -24,7 +26,11 @@ export const getPaymentStatus = async ({ orderId }: { orderId: string }) => {
     },
   });
 
-  if (!order) throw new Error("This order does not exist.");
+  if (!order) {
+    redirect("/");
+
+    // throw new Error("This order does not exist.");
+  }
 
   if (order.isPaid) {
     return order;
