@@ -64,14 +64,14 @@ const OrderReceivedEmail = ({
           </Section>
           <Hr style={global.hr} />
           <Section style={global.defaultPadding}>
-            <Row style={{ display: "inline-flw", marginBottom: 40 }}>
+            <Row style={{ display: "inline-flex", marginBottom: 40 }}>
               <Column style={{ width: 170 }}>
                 <Text style={global.paragraphWithBold}>Order Number:</Text>
                 <Text style={track.number}>{orderId}</Text>
               </Column>
               <Column>
-                <Text style={global.paragraphWithBold}>Order Number:</Text>
-                <Text style={track.number}>{orderId}</Text>
+                <Text style={global.paragraphWithBold}>Order Date:</Text>
+                <Text style={track.number}>{orderDate}</Text>
               </Column>
             </Row>
           </Section>
