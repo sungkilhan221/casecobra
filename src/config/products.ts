@@ -10,3 +10,5 @@ export const PRODUCT_PRICES = {
 } as const;
 
 export const BASE_PRICE = 14_00;
+
+export const BASE_SHIPPING_PRICE = 10_00;
